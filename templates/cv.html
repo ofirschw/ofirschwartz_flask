@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ofir CV</title>
+ <link rel="stylesheet" href="{{ "/static/cv.css" }}">
+<script src="{{ url_for('static', filename='cv.js') }}"></script>
+</head>
+
+<body>
+<div class="check">
+    <div id="item1"> <h2 class="item1header">Skills&Traits</h2>
+        <ul class="skills">
+          <li>Programming skills in SQL, PYTHON, JAVA, R, EXCEL.</li><br>
+          <li>English - high level, Hebrew - native speaker </li><br>
+          <li>Analytical and fast learner.</li><br>
+           <li>Dedicated and motivated.</li><br>
+            <li>Self-starter.</li><br>
+             <li>Collaborative, strong people and leadership skills.</li>
+        </ul>
+    </div>
+
+   <div id="item2"><h2 class="item1header">EDUCATION</h2>
+       <h3>STUDENT OF INDUSTRIAL ENGINEERING AND MANAGEMENT, BEN GURION UNIVERSITY</h3>
+        <ul class="skills">
+         <li>Last year of studies.</li><br>
+        </ul>
+        <h3> THE HEBREW REALI SCHOOL, HAIFA</h3>
+             <ul class="skills">
+         <li>Full matriculation majored in English, Mathematics and Economics and Business Administration.</li><br>
+        </ul>
+
+   </div>
+    <div id="item3">
+                    <h1>Welcome to my CV page</h1>
+        <p><a href="https://www.linkedin.com/in/ofirschwartz/">Visit my linkedin!</a></p>
+            <button id="name" onclick="func_name() ">click to my name</button>
+        <div class="floating" >
+            <img src="{{ "/static/maccabi.png" }}" alt="maccabi" width="200" height="200">
+        </div>
+        <br><br><br><br><br>
+        <h2 class="item1header">EXPERIENCE</h2>
+       <h3>PROGRAMMING TUTOR, BEN GURION UNIVERSITY</h3>
+        <ul class="skills">
+         <li>Working with students on their programming skills in JAVA and SQL.</li><br>
+            <a href="{{ url_for('assignment8') }}">assignment8</a>
+                       {%  block Hobbies %}
+                         {% endblock %}
+        </ul>
+    </div>
+     <div id="item4">
+         <h2 class="item1header">MILITARY SERVICE</h2>
+       <h3>COMMANDER AND OFFICER IN ARMORED CORPS, IDF</h3>
+        <ul class="skills">
+         <li>Commanded of tanks platoon, using high technological means and command of soldiers. </li><br>
+             <li>Operation officer - responsible for all time schedules and ongoing management. </li>
+        </ul>
+         <br>
+         <br>
+         <br>
+         <h2 class="item1header">VOLUNTEER EXPERIENCE</h2>
+       <h3>"PERACH" PROJECT, BEN GURION UNIVERSITY</h3>
+        <ul class="skills">
+         <li>Private lessons for teenagers with difficulties. leading social activities at leisure to support and meet
+their social needs as well. </li><br>
+        </ul>
+
+<a href="{{ "/static/OfirSchwartz_RESUME.pdf" }}" download style="font-size: 40px">
+  <img src="{{ "/static/Ofir.jpg" }}" alt="my cv in pdf" width="104" height="142">
+    <p style="font-size: 30px"> click on photo or here to download the CV on pdf</p>
+</a>
+
+     </div>
+
+    <div id="item5" style="background-color: #cccccc">
+                 <h2>Ask me your question</h2>
+        <div class="container">
+  <form class="formcontact" >
+    <br>
+    <h2> <strong> contact form </strong> </h2>
+    <label for="name"></label>
+    <input type="text" id="check" name="check" required minlength="4" maxlength="12" size="10" placeholder="Your name..">
+      <p id="first"></p>
+      <label for="Adress"></label>
+      <input type="email" id="Adress" name="Adress" placeholder="Your adress.." > <br>
+    <label for="subject"></label> <br>
+    <textarea id="subject" name="subject" required minlength="10" placeholder="Write something.." style="height:200px; "></textarea> <br></bt>
+    <input type="submit" value="Submit" onclick="myFunction()">
+        <p id="second"></p>
+
+  </form>
+</div>
+
+
+
+    </div>
+
+</div>
+</body>
+</html>

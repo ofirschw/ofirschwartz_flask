@@ -1,0 +1,138 @@
+
+.check {
+	display: grid;
+	grid-template-areas:
+    "header main right"
+    "left main  right  "
+    "footer footer footer";
+	grid-gap: 7px;
+    height: 700px;
+}
+
+#item1 {
+    grid-area: header;
+    background: gray;
+
+}
+
+#item2 {
+    position: static;
+    grid-area: left;
+    background: #52ab98;
+
+}
+
+#item3 {
+    grid-area: main;
+    background: #c8d8e4;
+    text-align: center;
+}
+
+#item4 {
+    grid-area: right;
+     background: #2b6777;
+}
+
+#item5 {
+    grid-area: footer;
+    background: blue;
+}
+
+
+
+@media (max-width: 768px) {
+    .check {
+    background: blue;
+    grid-template-areas:
+    "header header header"
+    "left left left"
+    "main main main"
+    "right right right"
+    "footer footer footer";
+    grid-template-rows: 50px 30px 1fr 60px 30px;
+    }
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  30px); }
+    65%  { transform: translate(0, 100px); }
+    to   { transform: translate(0, 30px); }
+}
+
+input[type=text] {
+  width:30%;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+textarea {
+  width: 90%;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=email] {
+  width: 60%;
+  padding: 20px;
+    text-align: center;
+  border: 2px solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #2b6777;
+  color: white;
+  padding: 12px 20px;
+        width: 90%;
+  border: none;
+text-align: center;  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+textarea#subject {
+    width: 90%;
+}
+
+input#check {
+    width: 90%;
+}
+
+input#Adress {
+    width: 90%;
+}
+
+.twenty{
+        background-color: steelblue ;
+        padding: 100px;
+        text-align:center;
+
+    }
+
+.older{
+        background-color: #587272;
+
+    }
