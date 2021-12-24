@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends "cv.html" %}
+{% block Login %}
+    {% if session.get('logged_in') %}
+        <h2>Hey {{ session.get('username') | upper }}!</h2>
+        <form action="/logout" method="GET" style="text-align: center;">
+            <button type="submit">Log out</button>
+        </form>
+
+    {% else %}
+        <h2>Hello guest</h2>
+        <div class="registration">
+            <h3>Registration- fill your details:</h3>
+            <div style="text-align: center;"></div><br>
+            <form action="/assignment9" method="POST">
+                <label for="name">Name:</label>
+                <input name="name" type="text" style="  padding: 1px 2px; border-radius: 0px; border: none;" required>
+                <label for="password">Password:</label>
+                <input name="password" type="password" required>
+                <button type="submit">Enter</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block Search %}
+    <div class="search">
+        <h3>Search User</h3>
+        <form action="/assignment9" method="GET" style="text-align: center;">
+            <label for="search">Search:</label>
+            <input type="text" name="searchInput">
+            <button type="submit">Submit</button>
+        </form>
+        <div>
+            {% if search %}
+                <h3>Search Result:</h3>
+                {% for j in users %}
+                    {% if j.first_name == search or j.last_name == search or j.email == search %}
+                        <h3>{{ j.first_name }}, {{ j.last_name }}, {{ j.email }}</h3>
+                        <div>
+                            <a href="mailto:${user.email}">Send email</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if search =='' %}
+                <h3>Search Result: All Users</h3>
+                {% for user in users %}
+                    <h3>{{ user.last_name }}, {{ user.first_name }}, {{ user.email }}</h3>
+                    <div>
+                        <a href="mailto:${user.email}">Send email</a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+</body>
+</html>
