@@ -85,6 +85,18 @@ def outer_source():
         user = ""
     return render_template('assignment11.html', user=user)
 
+
+@app.route('/assignment12/restapi_users', defaults={'userID': 1})
+@app.route('/assignment12/restapi_users/<int:userID>')
+def select_user(userID):
+    query = "SELECT * FROM users where idUsers = '%s';" % userID
+    query_result = interact_db(query, query_type='fetch')
+    if len(query_result) == 0:
+        return jsonify('This user is not exist!')
+    else:
+        return jsonify({'The chosen user is': query_result[0]})
+
+
 if __name__ == '__main__':
     app.run()
 
